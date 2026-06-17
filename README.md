@@ -12,6 +12,55 @@ Aplicación de consola para llevar el control de las finanzas personales.
 Permite cargar ingresos y egresos, ver el estado actual (balance) y generar
 distintos reportes (resumen y por categoría).
 
+## Diagrama de clases (UML)
+
+```mermaid
+classDiagram
+    class Transaccion {
+        -monto
+        +descripcion
+        +categoria
+        +get_monto()
+        +set_monto()
+        +impacto()
+        +mostrar()
+    }
+    class Ingreso {
+        +impacto()
+        +mostrar()
+    }
+    class Egreso {
+        +impacto()
+        +mostrar()
+    }
+    class GestorFinanzas {
+        +transacciones
+        +agregar()
+        +listar()
+        +generar_reporte()
+    }
+    class EstrategiaReporte {
+        +generar()
+    }
+    class ReporteBalance {
+        +generar()
+    }
+    class ReporteResumen {
+        +generar()
+    }
+    class ReportePorCategoria {
+        +generar()
+    }
+
+    Transaccion <|-- Ingreso
+    Transaccion <|-- Egreso
+    GestorFinanzas o-- Transaccion
+    GestorFinanzas ..> EstrategiaReporte : usa (Strategy)
+    EstrategiaReporte <|-- ReporteBalance
+    EstrategiaReporte <|-- ReporteResumen
+    EstrategiaReporte <|-- ReportePorCategoria
+```
+
 ## Conceptos aplicados
 - **Programación Orientada a Objetos**
   - Abstracción: la clase `Transaccion` define la base común.
