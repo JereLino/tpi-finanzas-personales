@@ -97,3 +97,24 @@ tpi_finanzas/
 python main.py
 ```
 4. Usar el menú para cargar ingresos/egresos y ver los reportes.
+
+## Modo de uso
+Al iniciar se muestra un menú. Se escribe el número de la opción y Enter:
+
+- **1 - Cargar ingreso** / **2 - Cargar egreso**: pide descripción, categoría y monto
+  (el monto se escribe sin símbolo `$` ni puntos, por ejemplo `50000`).
+- **3 - Ver todas las transacciones**: lista lo cargado.
+- **4 - Ver balance**: muestra el saldo actual (ingresos menos egresos).
+- **5 - Ver reportes**: abre un submenú donde se elige una letra:
+  - `a` → Resumen (total ingresos, total egresos y saldo).
+  - `b` → Por categoría (cuánto suma cada categoría).
+- **6 - Salir**: cierra la aplicación.
+
+Ejemplo de carga de un ingreso:
+```
+Descripcion: Sueldo
+Categoria: Trabajo
+Monto: 50000
+Registrando nueva transaccion...
+Transaccion registrada con exito!
+```
