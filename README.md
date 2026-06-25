@@ -3,7 +3,7 @@
 Trabajo Práctico Integrador - Programación Avanzada (UNAB) - 2026
 
 ## Integrantes
-- Machado Nicolas Perez
+- Machado  Perez Nicolas
 - Ruiz Celeste
 - Pascolo Jeremias
 
