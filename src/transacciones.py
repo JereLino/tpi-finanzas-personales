@@ -1,9 +1,9 @@
-# Clase base: representa una transaccion (un movimiento de dinero)
-# De esta clase heredan Ingreso y Egreso (relacion "es un")
+# Clase base: representa una transaccion 
+# De esta clase heredan Ingreso y Egreso
 class Transaccion:
 
     def __init__(self, monto, descripcion, categoria):
-        self._monto = monto              # atributo "privado" (con guion bajo)
+        self._monto = monto              # atributo "privado" 
         self.descripcion = descripcion
         self.categoria = categoria
 
