@@ -1,8 +1,7 @@
-# PATRON STRATEGY
-# Cada estrategia sabe generar un reporte distinto.
-# El gestor puede cambiar de estrategia sin cambiar su codigo.
+# Usamos el patrón Strategy para poder meter distintos tipos de reportes 
+# sin tener que modificar la lógica del sistema principal.
 
-# Estrategia base: todas las estrategias tienen el metodo generar()
+# Clase base para que hereden los demás reportes
 class EstrategiaReporte:
 
     def generar(self, transacciones):
