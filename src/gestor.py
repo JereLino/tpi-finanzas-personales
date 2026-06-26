@@ -7,7 +7,7 @@ class GestorFinanzas:
     def __init__(self):
         self.transacciones = []          # composicion: contiene transacciones
 
-# Agrega una transacción y avisa por consola gracias al decorador
+    # Agrega una transacción y avisa por consola gracias al decorador
     @registrar_carga
     def agregar(self, transaccion):
         self.transacciones.append(transaccion)
@@ -19,5 +19,6 @@ class GestorFinanzas:
             for t in self.transacciones:
                 t.mostrar()
 
-# Ejecuta el reporte según la opción que le pases
+    # Ejecuta el reporte según la opción que le pases
+    def generar_reporte(self, estrategia):
         estrategia.generar(self.transacciones)
