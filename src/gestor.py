@@ -1,15 +1,13 @@
 from decoradores import registrar_carga
 
 
-# El GestorFinanzas es el "dueño del proceso".
-# Guarda las transacciones (composicion) y pide los reportes.
+# Clase principal para manejar los movimientos
 class GestorFinanzas:
 
     def __init__(self):
         self.transacciones = []          # composicion: contiene transacciones
 
-    # El decorador @registrar_carga le agrega los mensajes
-    # de "registrando..." y "registrada con exito" sin tocar este metodo.
+# Agrega una transacción y avisa por consola gracias al decorador
     @registrar_carga
     def agregar(self, transaccion):
         self.transacciones.append(transaccion)
@@ -21,8 +19,5 @@ class GestorFinanzas:
             for t in self.transacciones:
                 t.mostrar()
 
-    # Aca se usa el patron Strategy:
-    # el gestor NO sabe como se arma el reporte,
-    # solo le pide a la estrategia que lo genere.
-    def generar_reporte(self, estrategia):
+# Ejecuta el reporte según la opción que le pases
         estrategia.generar(self.transacciones)
