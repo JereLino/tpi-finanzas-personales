@@ -1,5 +1,4 @@
-# Decorador: agrega un mensaje antes y despues de cargar una transaccion,
-# sin tener que modificar el codigo del metodo original.
+# Decorador: agrega un mensaje antes y despues de cargar una transaccion
 def registrar_carga(funcion):
     def funcion_nueva(self, transaccion):
         print("Registrando nueva transaccion...")
